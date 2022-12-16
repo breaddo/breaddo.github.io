@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!--Code by Divinector - divinectorweb.com-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>animated background with pure css and html</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="style.css">
+	<script src = "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src = "https://d3js.org/d3.v3.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<link href="CSS file2/main.css" rel="stylesheet">
+	<!-- Vendor CSS Files --> 
+	<link href="assets2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+	<link href="assets2/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"> 
+	<link href="assets2/vendor/aos/aos.css" rel="stylesheet"> 
+	<link href="assets2/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> 
+	<link href="assets2/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> 
+
+	<!-- Template Main CSS File --> 
+	<link href="assets2/css/main.css" rel="stylesheet">
+    <style>
+		
+        * {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Share Tech Mono,monospace;
+	color: #34bee7;
+	
+}
+.banner-text { 
+        width: 100%; 
+        position: absolute; 
+        z-index: 1; 
+        font-family: "Share Tech Mono", monospace;
+        } 
+        .banner-text ul { 
+        height: 50px; 
+        float: right;
+        font-family: "Share Tech Mono", monospace; 
+        } 
+        .banner-text ul li { 
+        display: inline-block; 
+        padding: 40px 15px; 
+        text-transform: uppercase; 
+        color: aliceblue; 
+        font-size: 20px; 
+        font-family: "Share Tech Mono", monospace;
+        } 
+        .banner-text ul li:hover { 
+        cursor: pointer; 
+        font-family: "Share Tech Mono", monospace;
+        color: #34bee7;
+        transition: 0.3s;
+        } 
+        .banner-text h2 { 
+        text-align: center; 
+        color: aliceblue; 
+        font-size: 50px; 
+        margin-top: 20%; 
+        font-family: "Share Tech Mono", monospace;
+        }
+.animation-area {
+	/* background: linear-gradient(to left,rgb(67, 64, 64), black); */
+	background-color: black;
+	width: 100%;
+	height: 100vh;
+}
+.box-area {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box-area li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	background: rgba(220, 214, 214, 0.2);
+	animation: animate 20s linear infinite;
+	bottom: -150px;
+}
+.box-area li:nth-child(1) {
+	left: 86%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(2) {
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box-area li:nth-child(3) {
+	left: 70%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.box-area li:nth-child(4) {
+	left: 42%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box-area li:nth-child(5) {
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-800px) rotate(360deg);
+		opacity: 0;
+	}
+}
+body {
+	/* background: linear-gradient(to left, rgb(67, 64, 64), black); */
+	background-color: black;
+}
+.wrapper {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	width: 1170px;
+	margin: auto;
+}
+.box-area2	 {
+	display: flex;
+	
+}
+.single-team {
+	width: 33%;
+	height: auto;
+	margin: 0 20px;
+	position: relative;
+	object-fit: cover;
+}
+.single-team img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	color: #fff;
+	transform: scale(0, 1);
+	transition: transform .2s ease-in-out;
+}
+.content::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	color: #fff;
+	/* background: linear-gradient(45deg, #2a2b2c, #969899); */
+	background-color: rgb(21, 20, 20);
+}
+.single-team:hover .content {
+	transform: scale(1, 1);
+}
+.content>* {
+	z-index: 999;
+}
+.content h3 span {
+	display: block;
+	font-family: Share Tech Mono,monospace;
+	color: #34bee7;
+}
+.content h3 {
+	text-align: center;
+	font-family: Share Tech Mono,monospace;
+	font-size: 30px;
+	color: #34bee7;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.wrapper {
+		width: 100%;
+	}
+	.box-area2 {
+		flex-direction: column;
+	}
+	.single-team {
+		width: 100%;
+		margin: 0;
+		object-fit: cover;
+	}
+}
+@media (max-width: 767px) {
+	.wrapper {
+		width: 100%;
+	}
+	.box-area2 {
+		flex-direction: column;
+	}
+	.single-team {
+		width: 100%;
+		margin: 0;
+	}
+}
+.modal{
+	margin-top: 2%;
+}
+.modal-body {
+    background-color: rgb(0, 0, 0);
+	color: #34bee7;
+}
+.modal-header{
+	background-color: black;
+	color: #34bee7;
+}
+.modal-footer{
+	background-color: black;
+	color: #34bee7;
+
+}
+.btn-close{
+	color: #34bee7;
+}
+.btn {
+	color: rgb(199, 199, 199);
+}
+.modal_inside_picture{
+	margin-left: 100px;
+	margin-bottom: 30px;
+	max-height: 180px;
+}
+
+
+
+    </style>
+</head>
+<body>
+	<div class="banner-text"> 
+        <ul> 
+         <li><a href="schizo.html" style="color:inherit; text-decoration: none;">Home</a></li> 
+         <li><a href="musicpage.html" style="color:inherit; text-decoration: none;">Experience</a></li> 
+         <li><a href="schizo.html" style="color:inherit; text-decoration: none;">Treatment</a></li> 
+         <li><a href="schizo.html" style="color:inherit; text-decoration: none;">Hotlines</a></li> 
+        </ul>
+       </div>
+	<div class="animation-area">
+		<ul class="box-area">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="wrapper">
+			<div class="box-area2">
+				<div class="single-team">
+								<!-- Button trigger modal -->
+									<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+										
+											<img src="pics/@llumiinaa.jfif" alt="" style="background-size: auto;">
+											<div class="content">
+											<h3 style="font-weight: bolder;">Medication</h3>       
+											</div>
+											</button>
+										</div>
+									
+									<!-- Modal -->
+									<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+										<div class="modal-dialog">
+										<div class="modal-content border-0">
+											<div class="modal-header border-0">
+											<h1 class="modal-title fs-5" id="staticBackdropLabel" style="font-weight: bold;" >Types of Medicine</h1>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												<img src="pics/many-white-pills-black-background-white-tablets-medication-antibiotics-many-white-pills-white-dust-black-background-176244571.jpg" alt="" class="modal_inside_picture">
+											<p style="color: rgb(199, 199, 199);">Medications are the cornerstone of schizophrenia treatment, and antipsychotic medications are the most commonly prescribed drugs. They're thought to control symptoms by affecting the brain neurotransmitter dopamine. Some common medicines prescribed can be:
+												<ul style="color: rgb(199, 199, 199);">
+													<li>Aripiprazole (Abilify)</li>
+													<li>Iloperidone (Fanapt)</li>
+													<li>Quetiapine (Seroquel)</li>
+												</ul>
+											</p>
+											</div>
+											<div class="modal-footer border-0">
+											<button type="button" class="btn btn-#34bee7" data-bs-dismiss="modal">Close</button>
+											</div>
+										</div>
+										</div>
+									</div>
+									<div class="single-team">
+										<!-- Button trigger modal -->
+											<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+												
+										
+													<img src="pics/download (6).jfif" alt="" style="background-size: auto;" >
+													<div class="content">
+													<h3 style="font-weight: bolder;">Pychosocial Interventions</h3>       
+													</div>
+													</button>
+												</div>
+											
+											<!-- Modal -->
+											<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+												<div class="modal-dialog">
+												<div class="modal-content border-0">
+													<div class="modal-header border-0">
+													<h1 class="modal-title fs-5" id="staticBackdropLabel" style="font-weight: bold;" >Types of Interventions</h1>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+													</div>
+													<div class="modal-body">
+														<img src="pics/professional-gray-haired-man-psychologist-consulting-patient-during-psychological-consultation-cozy-dark-office-room-bearded-mature-psychotherapist.webp" alt="" class="modal_inside_picture">
+													<p style="color: rgb(199, 199, 199);"> After taking medicine as shown in the first card, in addition to continuing on medication, psychological and social (psychosocial) interventions are important. These interventions will help them adapt back to society, and may come in the form of:
+														<ul style="color: rgb(199, 199, 199);">
+															<li>Individual Therapy</li>
+															<li>Family Therapy</li>
+															<li>Social Skills Training</li>
+														</ul>
+													</p>
+													</div>
+													<div class="modal-footer border-0">
+													<button type="button" class="btn btn-#34bee7" data-bs-dismiss="modal">Close</button>
+													</div>
+												</div>
+												</div>
+											</div>
+											<div class="single-team">
+												<!-- Button trigger modal -->
+													<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">
+														
+												
+															<img src="pics/⁂ dirtwormdream.jfif" alt="" style="background-size: auto;">
+															<div class="content">
+															<h3 style="font-weight: bolder;">Serious Cases</h3>       
+															</div>
+															</button>
+														</div>
+													
+													<!-- Modal -->
+													<div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+														<div class="modal-dialog">
+														<div class="modal-content border-0">
+															<div class="modal-header border-0">
+															<h1 class="modal-title fs-5" id="staticBackdropLabel" style="font-weight: bold;" >Types of Extreme Measures</h1>
+															<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+															</div>
+															<div class="modal-body">
+																<img src="pics/Un cop de mà.jfif" alt="" class="modal_inside_picture">
+															<p style="color: rgb(199, 199, 199);">Most individuals with schizophrenia require some form of daily living support. Many communities have programs to help people with schizophrenia with jobs, housing, self-help groups and crisis situations. However, in severe cases, the measures below might be taken to help ensure patients are safe and have proper treatment:
+																<ul style="color: rgb(199, 199, 199);">
+																	<li>Hospitalisation</li>
+																	<li><a href="https://www.mayoclinic.org/tests-procedures/electroconvulsive-therapy/about/pac-20393894#:~:text=Electroconvulsive%20therapy%20(ECT)%20is%20a,of%20certain%20mental%20health%20conditions." style="color: rgb(199, 199, 199);">Electroconvulsive Therapy</a></li>
+																	<li>Living Support</li>
+																</ul>
+															</p>
+															</div>
+															<div class="modal-footer border-0">
+															<button type="button" class="btn btn-#34bee7" data-bs-dismiss="modal">Close</button>
+															</div>
+														</div>
+														</div>
+													</div>
+					
+													
+			</div>
+		</div>
+		<!-- ======= Portfolio Section ======= -->
+			<section id="portfolio" class="portfolio sections-bg">
+				<div class="container" data-aos="fade-up">
+				<div class="section-header">
+					<h2 style="font-family: Share Tech Mono,monospace; color: #34bee7;">Anyone can have Schizophrenia</h2>
+					<p style="color: rgb(199, 199, 199);">Schizophrenia can occur even to the most normal of people. Everyone can do their part to help people with such a condition live normal lives. Below are some of the actions one can take. Categorised into: Empathy, Support, Awareness and Vigilance respectively.</p>
+				</div>
+				<div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+					<div>
+					<ul class="portfolio-flters">
+						<li data-filter="*" class="filter-active">All</li>
+						<li data-filter=".filter-app">Empathy</li>
+						<li data-filter=".filter-product">Support</li>
+						<li data-filter=".filter-branding">Awareness</li>
+						<li data-filter=".filter-books">Vigilance</li>
+					</ul><!-- End Portfolio Filters -->
+					</div>		  
+					<div class="row gy-4 portfolio-container">		  
+					<div class="col-xl-4 col-md-6 portfolio-item filter-app">
+						<div class="portfolio-wrap ">
+						<img src="pics/listen.jfif" class="img-fluid" alt=""></class=>
+						<div class="portfolio-info">
+							<h4><a href="https://www.bmj.com/content/342/bmj.d2245" title="More Details" >Listen Actively</a></h4>
+							<p style="color: rgb(199, 199, 199);">It is important that you understand that schizophrenic people struggle to talk about certain topics especially about details on their illness. It can also affect coversations. If a loved one opens up to you, listen actively and give them your full attention. Give them time to finish their thoughts, even if it takes a bit longer than usual. Listen with empathy and without judgement. </p>
+						</div>
+						</div>
+					</div><!-- End Portfolio Item -->		  
+					<div class="col-xl-4 col-md-6 portfolio-item filter-app">
+						<div class="portfolio-wrap">
+						<img src="pics/understanding.png" class="img-fluid" alt=""></a>
+						<div class="portfolio-info">
+							<h4><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5299383/" title="More Details">Be Understanding	</a></h4>
+							<p style="color: rgb(199, 199, 199);">During episodes, your loved one may experience frightening sensations and act in ways you can't understand. Other symptoms of schizophrenia can make it hard for people to express emotions or feelings and communicate clearly. These are symptoms of an illness. They are no one's fault, but they can still be hard to cope with. Thus it is important for you to be understanding and always treat them normally.</p>
+						</div>
+						</div>
+					</div><!-- End Portfolio Item -->		  
+					<div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+						<div class="portfolio-wrap">
+						<img src="pics/Truths about Lies.jfif" class="img-fluid" alt=""></a>
+						<div class="portfolio-info">
+							<h4><a href="https://www.aruma.com.au/about-us/blog/myths-about-schizophrenia/#:~:text=Myth%20%231%3A%20People%20with%20schizophrenia%20have%20a%20split%20personality&text=They%20have%20one%2C%20like%20everybody,doesn't%20mean%20multiple%20personalities." title="More Details">Clearing Misconceptions</a></h4>
+							<p style="color: rgb(199, 199, 199);">Try to maintain your friendships or the network of people that you have in your life. These will later become important supports as your loved one recovers. Educate them and update them on your loved one's recovery. People are sometimes afraid to ask questions about schizophrenia and this will put them at ease. By exposing them to Schizophrenia and it's misconceptions, it will allow them to treat them better as well.</p>
+						</div>
+						</div>
+					</div><!-- End Portfolio Item -->		  
+					<div class="col-xl-4 col-md-6 portfolio-item filter-books">
+						<div class="portfolio-wrap">
+						<img src="pics/Default Title - Write Your Own - 19.jfif" class="img-fluid" alt=""></a>
+						<div class="portfolio-info">
+							<h4><a href="Hotline.html" title="More Details">Seek Professional Help</a></h4>
+							<p style="color: rgb(199, 199, 199);">If you think your loved one is at risk of harming themselves or others and they refuse help, it is possible to have them evaluated by a psychiatrist. This process may involve police and other first responders, and it can be a difficult and stressful process for everyone. But it can be a necessary step if someone is in danger. While your loved one may not want it, if you let them be, it might do more harm than good.</p>
+						</div>
+						</div>
+					</div><!-- End Portfolio Item -->		  
+					<div class="col-xl-4 col-md-6 portfolio-item filter-app">
+						<div class="portfolio-wrap">
+						<img src="pics/Space.jpg" class="img-fluid" alt=""></a>
+						<div class="portfolio-info">
+							<h4><a href="https://pubmed.ncbi.nlm.nih.gov/17099605/" title="More Details">Give Them Space</a></h4>
+							<p style="color: rgb(199, 199, 199);">During the recovery stage, your loved one will need extra help. However, sometimes too much can be dangerous as well. When they are recovering from an episode, they may need a quiet space and a lot of rest, away from people. Different people have different ways to recover from illnesses. Always keep in mind that too much help can be counterproductive and that your loved one may need some time alone to recover. </p>
+						</div>
+						</div>
+					</div><!-- End Portfolio Item -->		  
+					<div class="col-xl-4 col-md-6 portfolio-item filter-product">
+						<div class="portfolio-wrap">
+						<img src="pics/encourage.jfif" class="img-fluid" alt=""></a>
+						<div class="portfolio-info">
+							<h4><a href="https://www.uptodate.com/contents/schizophrenia-in-adults-maintenance-therapy-and-side-effect-management" title="More Details">Keep Encouraging Treatment</a></h4>
+							<p style="color: rgb(199, 199, 199);"> You are not responsible for your loved one’s treatment (unless your loved one is your child under 19), but you can support them. Schizophrenia can make it difficult for people to make and go to appointments and follow their treatment plan. With your loved one’s permission, you may choose to help by reminding them of appointments, taking them to appointments, or whatever helps in your situation. </p>
+						</div>
+						</div>
+					</div><!-- End Portfolio Item -->		  
+					<div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+						<div class="portfolio-wrap">
+						<img src="pics/knowledge is power __ follow MELANO for more content inspired by the culture.jfif" class="img-fluid" alt=""></a>
+						<div class="portfolio-info">
+							<h4><a href="https://www.mcleanhospital.org/essential/schizophrenia" title="More Details">Educate Yourself</a></h4>
+							<p style="color: rgb(199, 199, 199);">You don’t have to be an expert in schizophrenia, but learning more can help you understand what's going on. There are plenty of myths about schizophrenia, so it's a good idea to find trustworthy resources and learn from them. In turn you will understand why your loved one is behaving like this and spread awareness upon learning something new about schizophrenia so the general population will know how to act too.</p>
+						</div>
+						</div>
+					</div><!-- End Portfolio Item -->					  
+					<div class="col-xl-4 col-md-6 portfolio-item filter-books">
+						<div class="portfolio-wrap">
+						<img src="pics/Reading Aesthetic.jfif" class="img-fluid" alt=""></a>
+						<div class="portfolio-info">
+							<h4><a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/schizophrenia/self-care/" title="More Details">Take Care of Yourself</a></h4>
+							<p style="color: rgb(199, 199, 199);">As a close one, it's important to take care of yourself. Try to maintain your regular schedule and activities. Ask another family member or good friend to provide help with caregiving if it's too much. Be aware of your limits. This is because if you are too tired, you might not be able to take care of them properly since you yourself are not in a good state. Seek help when you need to and don't burn yourself out. </p>
+						</div>
+						</div>
+					</div><!-- End Portfolio Item --> 
+					</div><!-- End Portfolio Container -->		  
+				</div>		  
+				</div>
+			</section><!-- End Portfolio Section -->
+	</div>
+	
+<!-- Vendor JS Files --> 
+<script src="assets2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="assets2/vendor/aos/aos.js"></script> 
+<script src="assets2/vendor/glightbox/js/glightbox.min.js"></script> 
+<script src="assets2/vendor/purecounter/purecounter_vanilla.js"></script> 
+<script src="assets2/vendor/swiper/swiper-bundle.min.js"></script> 
+<script src="assets2/vendor/isotope-layout/isotope.pkgd.min.js"></script> 
+<script src="assets2/vendor/php-email-form/validate.js"></script> 
+<!-- Template Main JS File --> 
+<script src="assets2/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
